@@ -1,6 +1,9 @@
 'use strict';
 
-const dotenv   = require('dotenv').load();
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv   = require('dotenv').load();
+}
+
 const express  = require('express');
 const app      = express();
 const chatCat  = require('./app');

@@ -1,7 +1,7 @@
 'use strict';
 
 const session = require('express-session');
-const mongostore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 const config = require('../config');
 const db = require('../db');
 

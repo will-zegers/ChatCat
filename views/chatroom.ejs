@@ -9,9 +9,9 @@
 	<script src="https://widget.cloudinary.com/global/all.js"></script>
 	<script>
 	$(() => {
-		let socket  		 		= io('<%=host %>/chatter', {
-			'transports': ['websocket']
-		}),
+		let socket = io('<%=host %>/chatter', {
+			transports: ['websocket']
+		});
 		    roomId  		 		= '<%= roomId %>',
 		    user    		 		= '<%= user.fullName %>',
 		    userPic 		 		= '<%= user.profilePic %>',

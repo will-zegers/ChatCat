@@ -6,3 +6,6 @@ node_modules
 
 # development files
 app/config/development.json
+
+# log files
+*.log

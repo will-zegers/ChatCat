@@ -1,0 +1,19 @@
+#!/bin/bash
+
+LINES=$(wc -l chatCatDebug.log | awk '{print $1}')
+
+if [ $# -eq 0 ]
+then
+	START=1
+else
+	START=$(($LINES+1-$1))
+	if [ $START -lt 0 ]
+	then
+		START=1
+	fi
+fi
+
+for i in `seq $START $LINES`
+do 
+	sed "${i}q;d" chatCatDebug.log | python -m json.tool;
+done

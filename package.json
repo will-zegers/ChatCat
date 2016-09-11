@@ -21,10 +21,13 @@
     "express": "4.13.3",
     "express-session": "^1.14.1",
     "mongoose": "4.3.1",
+    "morgan": "^1.7.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-twitter": "^1.0.4",
+    "redis": "^2.6.2",
     "socket.io": "^1.4.8",
+    "socket.io-redis": "^1.0.0",
     "winston": "^2.2.0"
   }
 }

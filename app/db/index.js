@@ -1,22 +1,23 @@
 'use strict';
 
 const config   = require('../config');
+const logger   = require('../logger');
 const mongoose = require('mongoose').connect(config.dbURI);
 
 mongoose.connection
   .on('error', err => {
-    console.log('[-] Mongoose connection error: ', err);
+    logger.log('error', '[-] Mongoose connection error: ' + err);
   })
   .on('connected', () => {
-    console.log('[+] Mongoose connected to ' + config.dbURI);
+    logger.log('info', '[+] Mongoose connected to ' + config.dbURI);
   })
   .on('disconnected', () => {
-    console.log('[!] Mongoose disconnected');
+    logger.log('info', '[!] Mongoose disconnected');
   });
 
 var gracefulShutdown = (msg, callback) => {
   mongoose.connection.close(() => {
-    console.log('[i] Mongoose disconnected through ' + msg);
+    console.log('info', '[i] Mongoose disconnected through ' + msg);
     callback();
   });
 }

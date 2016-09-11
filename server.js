@@ -28,4 +28,5 @@ app.use('/', chatCat.router);
 //   console.log('ChatCAT running on port: ', app.get('port'));
 // });
 
-chatCat.ioServer(app).listen(process.env.PORT || 3000);
+// chatCat.ioServer(app).listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);

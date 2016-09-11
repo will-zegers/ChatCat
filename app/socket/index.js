@@ -5,18 +5,6 @@ const h = require('../helpers');
 module.exports = (io, app) => {
   let allrooms = app.locals.chatrooms;
 
-  allrooms.push({
-    name: 'Good Food',
-    id: '0001',
-    users: []
-  });
-
-  allrooms.push({
-    name: 'Cloud Computing',
-    id: '0002',
-    users: []
-  });
-
   io.of('/roomslist').on('connection', socket => {
     socket.on('getChatrooms', () => {
       socket.emit('chatroomsList', JSON.stringify(allrooms));
